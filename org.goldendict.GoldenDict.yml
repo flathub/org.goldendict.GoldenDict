@@ -17,6 +17,7 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --env=QT_AUTO_SCREEN_SCALE_FACTOR=1 # HiDPI
   - --env=TMPDIR=/var/tmp
+  - --persist=.goldendict
 modules:
   - name: opencc
     buildsystem: cmake-ninja
