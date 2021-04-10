@@ -20,6 +20,17 @@ finish-args:
   - --persist=.goldendict
   - --talk-name=org.freedesktop.Flatpak # To execute translation programs
 modules:
+  - name: translate-shell
+    sources:
+      - type: git
+        url: https://github.com/soimort/translate-shell.git
+        tag: v0.9.6.12
+        x-checker-data:
+          type: anitya
+          project-id: 15342
+          tag-template: v$version
+
+        commit: 46e2a14fff1de5bb97d286e78fa2221b3a1eab37
   - name: opencc
     buildsystem: cmake-ninja
     build-options:
