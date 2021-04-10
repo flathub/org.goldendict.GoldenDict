@@ -17,7 +17,6 @@ finish-args:
   - --env=QT_AUTO_SCREEN_SCALE_FACTOR=1 # HiDPI
   - --env=TMPDIR=/var/tmp
   - --persist=.goldendict
-  - --talk-name=org.freedesktop.Flatpak # To execute translation programs
 modules:
   - name: translate-shell
     sources:
