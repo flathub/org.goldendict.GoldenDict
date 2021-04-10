@@ -1,10 +1,9 @@
 app-id: org.goldendict.GoldenDict
 runtime: org.kde.Platform
-runtime-version: '5.15'
+runtime-version: "5.15"
 sdk: org.kde.Sdk
-base-version: '5.15'
+base-version: "5.15"
 command: goldendict
-# separate-locales: false
 base: io.qt.qtwebkit.BaseApp
 finish-args:
   - --share=ipc
@@ -25,12 +24,16 @@ modules:
       - type: git
         url: https://github.com/soimort/translate-shell.git
         tag: v0.9.6.12
+        commit: 46e2a14fff1de5bb97d286e78fa2221b3a1eab37
         x-checker-data:
           type: anitya
           project-id: 15342
           tag-template: v$version
+    no-autogen: true
+    build-options:
+      make-install-args:
+        - PREFIX=${FLATPAK_DEST}
 
-        commit: 46e2a14fff1de5bb97d286e78fa2221b3a1eab37
   - name: opencc
     buildsystem: cmake-ninja
     build-options:
@@ -41,12 +44,12 @@ modules:
       - type: git
         url: https://github.com/BYVoid/OpenCC.git
         tag: ver.1.1.2
+        commit: be3af873de7d9ca28c274b4a917d9fcd953345cf
         x-checker-data:
           type: anitya
           project-id: 7230
           tag-template: ver.$version
 
-        commit: be3af873de7d9ca28c274b4a917d9fcd953345cf
   - name: lzo2
     config-opts:
       - --enable-shared
@@ -54,7 +57,7 @@ modules:
     cleanup:
       - /include
       - /share/doc
-      - '*.la'
+      - "*.la"
       - /lib/*.so
     sources:
       - type: archive
@@ -100,10 +103,11 @@ modules:
           tag-template: v$version
 
         commit: e4558ffd1dc49399faf4ee5d85abed4386b4dcf5
+
   - name: libao
     cleanup:
       - /include
-      - '*.la'
+      - "*.la"
       - /lib/pkgconfig
       - /lib/ckport
       - /share
@@ -144,5 +148,8 @@ modules:
             redist/org.goldendict.GoldenDict.metainfo.xml
       - type: patch
         path: icon-rename.patch
+      # Add translate-shell to enable Google Translate by default
+      - type: patch
+        path: add-translate-shell.patch
     cleanup:
       - /share/pixmaps
