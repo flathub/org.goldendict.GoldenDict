@@ -1,8 +1,8 @@
 app-id: org.goldendict.GoldenDict
 runtime: org.kde.Platform
-runtime-version: "5.15"
+runtime-version: '5.15'
 sdk: org.kde.Sdk
-base-version: "5.15"
+base-version: '5.15'
 command: goldendict
 base: io.qt.qtwebkit.BaseApp
 finish-args:
@@ -56,7 +56,7 @@ modules:
     cleanup:
       - /include
       - /share/doc
-      - "*.la"
+      - '*.la'
       - /lib/*.so
     sources:
       - type: archive
@@ -95,18 +95,18 @@ modules:
     sources:
       - type: git
         url: https://github.com/facebook/zstd.git
-        tag: v1.4.9
+        tag: v1.5.0
         x-checker-data:
           type: anitya
           project-id: 12083
           tag-template: v$version
 
-        commit: e4558ffd1dc49399faf4ee5d85abed4386b4dcf5
+        commit: a488ba114ec17ea1054b9057c26a046fc122b3b6
 
   - name: libao
     cleanup:
       - /include
-      - "*.la"
+      - '*.la'
       - /lib/pkgconfig
       - /lib/ckport
       - /share
