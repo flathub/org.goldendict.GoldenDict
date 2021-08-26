@@ -14,6 +14,7 @@ finish-args:
   - --socket=pulseaudio # videos/audios
   - --share=network
   - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
   - --env=QT_AUTO_SCREEN_SCALE_FACTOR=1 # HiDPI
   - --env=TMPDIR=/var/tmp
   - --persist=.goldendict
