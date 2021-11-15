@@ -138,7 +138,7 @@ modules:
         url: https://github.com/goldendict/goldendict
         # The upstream doesn't provide a stable branch
         branch: master
-        commit: b9b7067b5bafa562d0e00b91e2489b5e3f3fd7ef
+        commit: b10cdf685c8c02d2be2f1ae4f1e03a4e02db48d8
       - type: shell
         commands:
           # Put the version to the metadata
