@@ -96,13 +96,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/facebook/zstd.git
-        tag: v1.5.1
+        tag: v1.5.2
         x-checker-data:
           type: anitya
           project-id: 12083
           tag-template: v$version
 
-        commit: 791626dfb92acf4a3d3ba0342636b0dd82848e01
+        commit: e47e674cd09583ff0503f0f6defd6d23d8b718d3
 
   - name: libao
     cleanup:
