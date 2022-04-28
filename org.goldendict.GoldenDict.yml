@@ -1,8 +1,8 @@
 app-id: org.goldendict.GoldenDict
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 sdk: org.kde.Sdk
-base-version: '5.15-21.08'
+base-version: 5.15-21.08
 command: goldendict
 base: io.qt.qtwebkit.BaseApp
 finish-args:
@@ -78,12 +78,12 @@ modules:
     sources:
       - type: git
         url: https://salsa.debian.org/debian/eb.git
-        tag: debian/4.4.3-13
+        tag: debian/4.4.3-14
         x-checker-data:
           type: anitya
           project-id: 155542
           tag-template: debian/$version
-        commit: 7167a0ce5af7b353598db34c7f27845f20282e55
+        commit: 58570b89141bd19684544b41efc94a3586adf0b9
       - type: shell
         commands:
           - cp -p /usr/share/automake-*/config.{sub,guess} .
