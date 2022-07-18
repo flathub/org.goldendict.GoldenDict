@@ -1,8 +1,8 @@
 app-id: org.goldendict.GoldenDict
 runtime: org.kde.Platform
-runtime-version: 5.15-21.08
+runtime-version: "6.3"
 sdk: org.kde.Sdk
-base-version: 5.15-21.08
+base-version: "6.3"
 command: goldendict
 base: io.qt.qtwebkit.BaseApp
 finish-args:
@@ -57,7 +57,7 @@ modules:
     cleanup:
       - /include
       - /share/doc
-      - '*.la'
+      - "*.la"
       - /lib/*.so
     sources:
       - type: archive
@@ -107,7 +107,7 @@ modules:
   - name: libao
     cleanup:
       - /include
-      - '*.la'
+      - "*.la"
       - /lib/pkgconfig
       - /lib/ckport
       - /share
