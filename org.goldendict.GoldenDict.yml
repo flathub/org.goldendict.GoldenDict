@@ -23,8 +23,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/soimort/translate-shell.git
-        tag: v0.9.6.12
-        commit: 46e2a14fff1de5bb97d286e78fa2221b3a1eab37
+        tag: v0.9.7
+        commit: a3bba39fb1dd40b10cfefac71dabdba14e4f76d0
         x-checker-data:
           type: anitya
           project-id: 15342
