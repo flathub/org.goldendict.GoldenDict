@@ -23,8 +23,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/soimort/translate-shell.git
-        tag: v0.9.6.12
-        commit: 46e2a14fff1de5bb97d286e78fa2221b3a1eab37
+        tag: v0.9.7
+        commit: a3bba39fb1dd40b10cfefac71dabdba14e4f76d0
         x-checker-data:
           type: anitya
           project-id: 15342
@@ -138,7 +138,7 @@ modules:
         url: https://github.com/goldendict/goldendict
         # The upstream doesn't provide a stable branch
         branch: master
-        commit: 1064880450a648696dfabdf698fdbeec095604e1
+        commit: 8f4107906961d667c0dcd665f8ec5131f218c5bd
       - type: shell
         commands:
           # Put the version to the metadata
