@@ -4,6 +4,7 @@ runtime-version: 5.15-22.08
 sdk: org.kde.Sdk
 command: goldendict
 base: io.qt.qtwebkit.BaseApp
+base-version: 5.15-22.08
 finish-args:
   - --share=ipc
   # GoldenDict use lots of X11 functions and it currently cannot work
