@@ -1,8 +1,7 @@
 app-id: org.goldendict.GoldenDict
 runtime: org.kde.Platform
-runtime-version: 5.15-21.08
+runtime-version: 5.15-22.08
 sdk: org.kde.Sdk
-base-version: 5.15-21.08
 command: goldendict
 base: io.qt.qtwebkit.BaseApp
 finish-args:
