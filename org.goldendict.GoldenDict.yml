@@ -47,7 +47,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: "^ver.([\\d.]+)$"
-          version-scheme: semver
+          version-scheme: semantic
 
   - name: lzo2
     config-opts:
@@ -81,7 +81,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: "^debian/([\\d.]+)$"
-          version-scheme: semver
+          version-scheme: semantic
         commit: 58570b89141bd19684544b41efc94a3586adf0b9
       - type: shell
         commands:
@@ -99,7 +99,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: "^v([\\d.]+)$"
-          version-scheme: semver
+          version-scheme: semantic
         commit: e47e674cd09583ff0503f0f6defd6d23d8b718d3
 
   - name: libao
