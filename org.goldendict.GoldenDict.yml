@@ -26,9 +26,8 @@ modules:
         tag: v0.9.7
         commit: a3bba39fb1dd40b10cfefac71dabdba14e4f76d0
         x-checker-data:
-          type: anitya
-          project-id: 15342
-          tag-template: v$version
+          type: git
+          tag-pattern: "^v([\\d.]+)$"
     no-autogen: true
     build-options:
       make-install-args:
@@ -46,9 +45,9 @@ modules:
         tag: ver.1.1.4
         commit: 2ddaffd31f6f9cae776ec2faa4b88d5c45e0d4d6
         x-checker-data:
-          type: anitya
-          project-id: 7230
-          tag-template: ver.$version
+          type: git
+          tag-pattern: "^ver.([\\d.]+)$"
+          version-scheme: semver
 
   - name: lzo2
     config-opts:
@@ -80,9 +79,9 @@ modules:
         url: https://salsa.debian.org/debian/eb.git
         tag: debian/4.4.3-14
         x-checker-data:
-          type: anitya
-          project-id: 155542
-          tag-template: debian/$version
+          type: git
+          tag-pattern: "^debian/([\\d.]+)$"
+          version-scheme: semver
         commit: 58570b89141bd19684544b41efc94a3586adf0b9
       - type: shell
         commands:
@@ -98,10 +97,9 @@ modules:
         url: https://github.com/facebook/zstd.git
         tag: v1.5.2
         x-checker-data:
-          type: anitya
-          project-id: 12083
-          tag-template: v$version
-
+          type: git
+          tag-pattern: "^v([\\d.]+)$"
+          version-scheme: semver
         commit: e47e674cd09583ff0503f0f6defd6d23d8b718d3
 
   - name: libao
