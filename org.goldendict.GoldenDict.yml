@@ -77,11 +77,12 @@ modules:
     sources:
       - type: git
         url: https://salsa.debian.org/debian/eb.git
-        tag: debian/4.4.3-14
+        tag: debian/4.4.3-9
         x-checker-data:
           type: git
           tag-pattern: ^debian/([\d.-]+)$
-        commit: 58570b89141bd19684544b41efc94a3586adf0b9
+          sort-tags: false
+        commit: 1330077ff49b82a409758e5e1fe4ff95f7b6b146
       - type: shell
         commands:
           - cp -p /usr/share/automake-*/config.{sub,guess} .
