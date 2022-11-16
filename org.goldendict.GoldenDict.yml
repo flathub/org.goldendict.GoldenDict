@@ -26,9 +26,8 @@ modules:
         tag: v0.9.7
         commit: a3bba39fb1dd40b10cfefac71dabdba14e4f76d0
         x-checker-data:
-          type: anitya
-          project-id: 15342
-          tag-template: v$version
+          type: git
+          tag-pattern: ^v([\d.]+)$
     no-autogen: true
     build-options:
       make-install-args:
@@ -46,9 +45,9 @@ modules:
         tag: ver.1.1.4
         commit: 2ddaffd31f6f9cae776ec2faa4b88d5c45e0d4d6
         x-checker-data:
-          type: anitya
-          project-id: 7230
-          tag-template: ver.$version
+          type: git
+          tag-pattern: ^ver.([\d.]+)$
+          version-scheme: semantic
 
   - name: lzo2
     config-opts:
@@ -78,12 +77,12 @@ modules:
     sources:
       - type: git
         url: https://salsa.debian.org/debian/eb.git
-        tag: debian/4.4.3-14
+        tag: debian/4.4.3-9
         x-checker-data:
-          type: anitya
-          project-id: 155542
-          tag-template: debian/$version
-        commit: 58570b89141bd19684544b41efc94a3586adf0b9
+          type: git
+          tag-pattern: ^debian/([\d.-]+)$
+          sort-tags: false
+        commit: 1330077ff49b82a409758e5e1fe4ff95f7b6b146
       - type: shell
         commands:
           - cp -p /usr/share/automake-*/config.{sub,guess} .
@@ -98,10 +97,9 @@ modules:
         url: https://github.com/facebook/zstd.git
         tag: v1.5.2
         x-checker-data:
-          type: anitya
-          project-id: 12083
-          tag-template: v$version
-
+          type: git
+          tag-pattern: ^v([\d.]+)$
+          version-scheme: semantic
         commit: e47e674cd09583ff0503f0f6defd6d23d8b718d3
 
   - name: libao
@@ -113,12 +111,12 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://downloads.xiph.org/releases/ao/libao-1.2.0.tar.gz
-        sha256: 03ad231ad1f9d64b52474392d63c31197b0bc7bd416e58b1c10a329a5ed89caf
+        url: https://gitlab.xiph.org/xiph/libao/-/archive/1.2.2/libao-1.2.2.tar.gz
+        sha256: df8a6d0e238feeccb26a783e778716fb41a801536fe7b6fce068e313c0e2bf4d
         x-checker-data:
           type: anitya
           project-id: 7629
-          url-template: https://downloads.xiph.org/releases/ao/libao-$version.tar.gz
+          url-template: https://gitlab.xiph.org/xiph/libao/-/archive/$version/libao-$version.tar.gz
 
   - name: goldendict
     buildsystem: qmake
@@ -138,7 +136,7 @@ modules:
         url: https://github.com/goldendict/goldendict
         # The upstream doesn't provide a stable branch
         branch: master
-        commit: 927566244fd4592bf45e88e3a154528627fde957
+        commit: 5e8cab6d545b778cd797d713d6797ce1bfcfe629
       - type: shell
         commands:
           # Put the version to the metadata
