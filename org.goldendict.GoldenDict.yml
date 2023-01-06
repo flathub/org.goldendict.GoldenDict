@@ -133,6 +133,16 @@ modules:
       - CONFIG+=chinese_conversion_support
     build-commands:
       - install -Dm644 redist/icons/goldendict.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
+    post-install:
+      # To allow separate locales
+      # https://searchfox.org/mozilla-central/rev/8a4f55bc09ffc5c25dcb4586c51ae4a9fee77b4c/taskcluster/docker/firefox-flatpak/runme.sh#131-133
+      - |
+        for lang in ${FLATPAK_DEST}/goldendict/locale/*.qm
+        do
+          locale="$(basename -s .qm $lang)"
+          install -Dm644 -t "${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/" "$lang"
+          ln -sf "${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/$(basename $lang)" "${FLATPAK_DEST}/goldendict/locale/$(basename $lang)"
+        done
     sources:
       - type: git
         url: https://github.com/goldendict/goldendict
