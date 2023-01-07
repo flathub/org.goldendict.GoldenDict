@@ -129,6 +129,8 @@ modules:
       - INCLUDEPATH+="${FLATPAK_DEST}/include/QtWebKitWidgets"
       - INCLUDEPATH+="${FLATPAK_DEST}/include/QtWebKit"
       - CONFIG+=release
+      - CONFIG+=zim_support
+      - CONFIG+=chinese_conversion_support
     build-commands:
       - install -Dm644 redist/icons/goldendict.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
     sources:
