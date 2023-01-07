@@ -56,7 +56,7 @@ modules:
     cleanup:
       - /include
       - /share/doc
-      - '*.la'
+      - "*.la"
       - /lib/*.so
     sources:
       - type: archive
@@ -105,7 +105,7 @@ modules:
   - name: libao
     cleanup:
       - /include
-      - '*.la'
+      - "*.la"
       - /lib/pkgconfig
       - /lib/ckport
       - /share
@@ -136,12 +136,14 @@ modules:
     post-install:
       # To allow separate locales
       # https://searchfox.org/mozilla-central/rev/8a4f55bc09ffc5c25dcb4586c51ae4a9fee77b4c/taskcluster/docker/firefox-flatpak/runme.sh#131-133
+      # https://github.com/flathub/flathub/wiki/AppData-Guidelines#translations
       - |
-        for lang in ${FLATPAK_DEST}/goldendict/locale/*.qm
+        prefix=goldendict
+        for lang in ${FLATPAK_DEST}/share/goldendict/locale/*.qm
         do
           locale="$(basename -s .qm $lang)"
-          install -Dm644 -t "${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/" "$lang"
-          ln -sf "${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/$(basename $lang)" "${FLATPAK_DEST}/goldendict/locale/$(basename $lang)"
+          install -Dm644 -t "${FLATPAK_DEST}/share/${prefix}/translations/${prefix}_${locale}.qm" "$lang"
+          ln -sf "${FLATPAK_DEST}/share/${prefix}/translations/${prefix}_${locale}.qm" "${FLATPAK_DEST}/share/goldendict/locale/$(basename $lang)"
         done
     sources:
       - type: git
@@ -149,14 +151,6 @@ modules:
         # The upstream doesn't provide a stable branch
         branch: master
         commit: 9a5e1e891027e1a347369973ebd79d62b7922c61
-      - type: shell
-        commands:
-          # Put the version to the metadata
-          - export VERSION="1.5.0RC2 ($(git rev-parse --short HEAD))" # The same version as the upstream
-          - appstream-util modify redist/org.goldendict.GoldenDict.metainfo.xml  releases
-            "<release version=\"${VERSION} \" date=\"`date --iso-8601`\"/>"
-          - sed -i -e "s,<releases>&lt;,<releases><," -e "s,&gt;</releases>,></releases>,"
-            redist/org.goldendict.GoldenDict.metainfo.xml
       - type: patch
         path: icon-rename.patch
       # Add translate-shell to enable Google Translate by default
@@ -164,3 +158,16 @@ modules:
         path: add-translate-shell.patch
     cleanup:
       - /share/pixmaps
+
+  - name: metainfo
+    buildsystem: simple
+    build-commands:
+          # Put the version to the metadata
+          - export VERSION="1.5.0RC2 ($(git rev-parse --short HEAD))" # The same version as the upstream
+          - appstream-util modify org.goldendict.GoldenDict.metainfo.xml  releases
+            "<release version=\"${VERSION} \" date=\"`date --iso-8601`\"/>"
+          - sed -i -e "s,<releases>&lt;,<releases><," -e "s,&gt;</releases>,></releases>,"
+            org.goldendict.GoldenDict.metainfo.xml
+    sources:
+      - type: file
+        path: org.goldendict.GoldenDict.metainfo.xml
