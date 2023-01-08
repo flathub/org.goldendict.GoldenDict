@@ -145,6 +145,8 @@ modules:
           install -Dm644 -t "${FLATPAK_DEST}/share/${prefix}/translations/${prefix}_${locale}.qm" "$lang"
           ln -sf "${FLATPAK_DEST}/share/${prefix}/translations/${prefix}_${locale}.qm" "${FLATPAK_DEST}/share/goldendict/locale/$(basename $lang)"
         done
+    cleanup:
+      - /share/pixmaps
     sources:
       - type: git
         url: https://github.com/goldendict/goldendict
@@ -156,18 +158,16 @@ modules:
       # Add translate-shell to enable Google Translate by default
       - type: patch
         path: add-translate-shell.patch
-    cleanup:
-      - /share/pixmaps
-
-  - name: metainfo
-    buildsystem: simple
-    build-commands:
-          # Put the version to the metadata
-          - export VERSION="1.5.0RC2 ($(git rev-parse --short HEAD))" # The same version as the upstream
-          - appstream-util modify org.goldendict.GoldenDict.metainfo.xml  releases
-            "<release version=\"${VERSION} \" date=\"`date --iso-8601`\"/>"
-          - sed -i -e "s,<releases>&lt;,<releases><," -e "s,&gt;</releases>,></releases>,"
-            org.goldendict.GoldenDict.metainfo.xml
-    sources:
       - type: file
         path: org.goldendict.GoldenDict.metainfo.xml
+      - type: shell
+        commands:
+          # Put the version & translation config to the metadata
+          - export VERSION="1.5.0RC2 ($(git rev-parse --short HEAD))" &&
+            appstream-util modify redist/org.goldendict.GoldenDict.metainfo.xml  releases
+            "<release version=\"${VERSION}\" date=\"`date --iso-8601`\"/>"
+          - sed -i
+            -e "s,<releases>&lt;,<releases><,"
+            -e "s,&gt;</releases>,></releases>,"
+            -e "s,</component>,<translation type='qt'>goldendict</translation></component>,"
+            redist/org.goldendict.GoldenDict.metainfo.xml
