@@ -56,7 +56,7 @@ modules:
     cleanup:
       - /include
       - /share/doc
-      - "*.la"
+      - '*.la'
       - /lib/*.so
     sources:
       - type: archive
@@ -105,7 +105,7 @@ modules:
   - name: libao
     cleanup:
       - /include
-      - "*.la"
+      - '*.la'
       - /lib/pkgconfig
       - /lib/ckport
       - /share
@@ -152,7 +152,7 @@ modules:
         url: https://github.com/goldendict/goldendict
         # The upstream doesn't provide a stable branch
         branch: master
-        commit: 9a5e1e891027e1a347369973ebd79d62b7922c61
+        commit: 46a34e805cab4cf1456a6bb70e5ee04ae8d06aa6
       - type: patch
         path: icon-rename.patch
       # Add translate-shell to enable Google Translate by default
@@ -163,11 +163,9 @@ modules:
       - type: shell
         commands:
           # Put the version & translation config to the metadata
-          - export VERSION="1.5.0RC2 ($(git rev-parse --short HEAD))" &&
-            appstream-util modify redist/org.goldendict.GoldenDict.metainfo.xml  releases
-            "<release version=\"${VERSION}\" date=\"`date --iso-8601`\"/>"
-          - sed -i
-            -e "s,<releases>&lt;,<releases><,"
-            -e "s,&gt;</releases>,></releases>,"
+          - export VERSION="1.5.0RC2 ($(git rev-parse --short HEAD))" && appstream-util
+            modify redist/org.goldendict.GoldenDict.metainfo.xml  releases "<release
+            version=\"${VERSION}\" date=\"`date --iso-8601`\"/>"
+          - sed -i -e "s,<releases>&lt;,<releases><," -e "s,&gt;</releases>,></releases>,"
             -e "s,</component>,<translation type='qt'>goldendict</translation></component>,"
             redist/org.goldendict.GoldenDict.metainfo.xml
