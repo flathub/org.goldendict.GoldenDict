@@ -152,7 +152,7 @@ modules:
         url: https://github.com/goldendict/goldendict
         # The upstream doesn't provide a stable branch
         branch: master
-        commit: 74aa95220d04b8e4704ad6dac0c4c018f8e76f1a
+        commit: e43c0d252130b0b83742d1847074df8f236d12cb
       - type: patch
         path: icon-rename.patch
       # Add translate-shell to enable Google Translate by default
