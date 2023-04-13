@@ -113,12 +113,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/facebook/zstd.git
-        tag: v1.5.4
+        tag: v1.5.5
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
           version-scheme: semantic
-        commit: 945f27758c0fd67b636103a38dbf050266c6b90a
+        commit: 63779c798237346c2b245c546c40b72a5a5913fe
 
   - name: libao
     cleanup:
