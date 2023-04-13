@@ -1,17 +1,18 @@
 # GoldenDict on Flathub
 
-## How to run external translator programs?
+## How to use the translator program `translate-shell`?
 
-You may want to call a external translator program as a dictionary source.
+You can use the [translate-shell](https://github.com/soimort/translate-shell) translator program as a dictionary source. It will return results from Google Translate (default), Bing Translator, Yandex.Translate or Apertium.
 
-For instance, if you want to utilize [translate-shell](https://github.com/soimort/translate-shell) to provide Google Translate (default), Bing Translator, Yandex.Translate, or Apertium results, after installing `translate-shell` in your host system, add
+Translate-shell is bundled with this Flatpak. To use it in addition to the default dictionary sources, go to Dictionaries > Sources > Programs of GoldenDict, and add an item with the following settings
+
 
 - Enable: check
 - Type: Plain Text
 - Name: Gtrans EN-ES
 - Command Line:
   ````shell
-  flatpak-spawn --host trans -e google -s en -t es -show-original y -show-original-phonetics n -show-translation y -no-ansi -show-translation-phonetics n -show-prompt-message n -show-languages y -show-original-dictionary n -show-dictionary n -show-alternatives n "%GDWORD%"
+  trans -engine google -source en -target es -show-original y -show-original-phonetics n -show-translation y -no-ansi -show-translation-phonetics n -show-prompt-message n -show-languages y -show-original-dictionary n -show-dictionary n -show-alternatives n "%GDWORD%"
   ````
 
-to Dictionaries > Sources > Programs of GoldenDict. Note that you should adjust the language parameters according to your needs.
+Note that you should adjust the language parameters according to your needs, according to [its documentation](https://www.soimort.org/translate-shell/#usage).
