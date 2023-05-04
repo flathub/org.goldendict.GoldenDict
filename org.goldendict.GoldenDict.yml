@@ -1,6 +1,6 @@
 app-id: org.goldendict.GoldenDict
 runtime: org.kde.Platform
-runtime-version: &runtime-version '5.15-22.08'
+runtime-version: &runtime-version 5.15-22.08
 sdk: org.kde.Sdk
 command: goldendict
 base: io.qt.qtwebkit.BaseApp
@@ -44,12 +44,12 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: 'https://downloads.sourceforge.net/mpg123/mpg123-1.31.3.tar.bz2'
+            url: https://downloads.sourceforge.net/mpg123/mpg123-1.31.3.tar.bz2
             sha256: 1ca77d3a69a5ff845b7a0536f783fee554e1041139a6b978f6afe14f5814ad1a
             x-checker-data:
               type: anitya
               project-id: 12413
-              url-template: 'https://downloads.sourceforge.net/mpg123/mpg123-$version.tar.bz2'
+              url-template: https://downloads.sourceforge.net/mpg123/mpg123-$version.tar.bz2
 
   - name: opencc
     buildsystem: cmake-ninja
@@ -170,7 +170,7 @@ modules:
         url: https://github.com/goldendict/goldendict
         # The upstream doesn't provide a stable branch
         branch: master
-        commit: 8834e4a2924d143751870f4b943c3ce608b10a7d
+        commit: 1bcf391b0e52bf2373238107f08c730bd4e2bccc
       - type: patch
         path: icon-rename.patch
       # Add translate-shell to enable Google Translate by default
