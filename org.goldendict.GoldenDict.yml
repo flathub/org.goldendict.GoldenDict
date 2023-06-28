@@ -174,7 +174,7 @@ modules:
         url: https://github.com/goldendict/goldendict
         # The upstream doesn't provide a stable branch
         branch: master
-        commit: 7d4c20799b59b40f9ce876f9aa19d17dd29e44a6
+        commit: a2be1797498a604634413c72739eb2f82aef00a2
       # Add translate-shell to enable Google Translate by default
       - type: patch
         path: add-translate-shell.patch
