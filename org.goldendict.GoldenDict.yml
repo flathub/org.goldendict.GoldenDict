@@ -44,8 +44,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://downloads.sourceforge.net/mpg123/mpg123-1.32.0.tar.bz2
-            sha256: 23d4629e30a59a6b0e05b39283f78b8e261e70e9c2673b3c1179718b393aec01
+            url: https://downloads.sourceforge.net/mpg123/mpg123-1.32.1.tar.bz2
+            sha256: fceb97d3999cd3d04c7f96b97e621d01a5de0a46a3d9e9ceaa87768274ea205f
             x-checker-data:
               type: anitya
               project-id: 12413
