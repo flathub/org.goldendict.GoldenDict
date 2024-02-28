@@ -2,17 +2,20 @@
 <!-- Copyright 2019 Vitaly Zaitsev <vitaly@easycoding.org> -->
 <component type="desktop">
   <id>org.goldendict.GoldenDict</id>
+  <developer>
+    <name>Konstantin Isakov</name>
+  </developer>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <name>GoldenDict</name>
   <summary>Dictionary lookup program</summary>
   <description>
     <p>
-        GoldenDict is a feature-rich dictionary lookup program, supporting multiple
-        dictionary formats (StarDict/Babylon/Lingvo/Dictd/AARD/MDict/SDict) and
-        online dictionaries, featuring perfect article rendering with the complete
-        markup, illustrations and other content retained, and allowing you to type
-        in words without any accents or correct case.
+      GoldenDict is a feature-rich dictionary lookup program, supporting multiple
+      dictionary formats (StarDict/Babylon/Lingvo/Dictd/AARD/MDict/SDict) and
+      online dictionaries, featuring perfect article rendering with the complete
+      markup, illustrations and other content retained, and allowing you to type
+      in words without any accents or correct case.
     </p>
   </description>
   <screenshots>
