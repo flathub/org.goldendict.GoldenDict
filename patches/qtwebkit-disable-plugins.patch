@@ -1,0 +1,12 @@
+diff --git a/mainwindow.cc b/mainwindow.cc
+index 3009d29..3b72ffb 100644
+--- a/mainwindow.cc
++++ b/mainwindow.cc
+@@ -1338,7 +1338,6 @@ void MainWindow::applyProxySettings()
+ void MainWindow::applyWebSettings()
+ {
+   QWebSettings *defaultSettings = QWebSettings::globalSettings();
+-  defaultSettings->setAttribute(QWebSettings::PluginsEnabled, cfg.preferences.enableWebPlugins);
+   defaultSettings->setAttribute( QWebSettings::DeveloperExtrasEnabled, true );
+ }
+ 
