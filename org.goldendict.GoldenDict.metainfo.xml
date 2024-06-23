@@ -40,4 +40,7 @@
   <provides>
     <id>org.goldendict.desktop</id>
   </provides>
+ <releases>
+   <release/>
+ </releases>
 </component>
