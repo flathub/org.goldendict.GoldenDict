@@ -1,0 +1,12 @@
+diff --git a/redist/org.goldendict.GoldenDict.metainfo.xml b/redist/org.goldendict.GoldenDict.metainfo.xml
+index be4a223..de6338d 100644
+--- a/redist/org.goldendict.GoldenDict.metainfo.xml
++++ b/redist/org.goldendict.GoldenDict.metainfo.xml
+@@ -40,4 +40,7 @@
+   <provides>
+     <id>org.goldendict.desktop</id>
+   </provides>
++  <releases>
++    <release/>
++  </releases>
+ </component>
