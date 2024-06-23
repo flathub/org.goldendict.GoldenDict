@@ -177,7 +177,11 @@ modules:
         commit: 59363bc947d9f07aac6b9bdecadbad0f0d5e030e
       # Add translate-shell to enable Google Translate by default
       - type: patch
-        path: add-translate-shell.patch
+        path: patches/add-translate-shell.patch
+      # Since 5.15-23.08, the upstream of io.qt.qtwebkit.BaseApp has replaced "Whitelist" with "Allowlist"
+      # https://github.com/movableink/webkit/commit/e6a3b085ef97cbf38b8ee68cc1f13480c23a334c#diff-8343a76de640f49f5bd766e51fe5691ee7f73f40857c455e49da4d832b35a474L265-R268
+      - type: patch
+        path: patches/qtwebkit-whitelist-to-allowlist.patch
       - type: file
         path: org.goldendict.GoldenDict.metainfo.xml
       - type: shell
