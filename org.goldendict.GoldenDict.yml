@@ -1,6 +1,6 @@
 app-id: org.goldendict.GoldenDict
 runtime: org.kde.Platform
-runtime-version: &runtime-version 5.15-23.08
+runtime-version: &runtime-version 5.15-22.08
 sdk: org.kde.Sdk
 command: goldendict
 base: io.qt.qtwebkit.BaseApp
@@ -181,17 +181,9 @@ modules:
         commit: 59363bc947d9f07aac6b9bdecadbad0f0d5e030e
       # Add translate-shell to enable Google Translate by default
       - type: patch
-        path: patches/add-translate-shell.patch
-      # Since 5.15-23.08, the upstream of io.qt.qtwebkit.BaseApp has replaced "Whitelist" with "Allowlist"
-      # https://github.com/movableink/webkit/commit/e6a3b085ef97cbf38b8ee68cc1f13480c23a334c#diff-8343a76de640f49f5bd766e51fe5691ee7f73f40857c455e49da4d832b35a474L265-R268
+        path: add-translate-shell.patch
       - type: patch
-        path: patches/qtwebkit-whitelist-to-allowlist.patch
-      # Since 5.15-23.08, the upstream of io.qt.qtwebkit.BaseApp has removed the plugin support
-      # https://github.com/movableink/webkit/commit/02c2f15a1e1e965809a9e21e42f52fb4ec61f23d#diff-15bad317b051b03d2f6179cefe134d8df60cbad76778eb0da410dd13cdc46cc1L201-L204
-      - type: patch
-        path: patches/qtwebkit-disable-plugins.patch
-      - type: patch
-        path: patches/metainfo-add-releases.patch
+        path: metainfo-add-releases.patch
       - type: shell
         commands:
           # Put the version & translation config to the metadata
