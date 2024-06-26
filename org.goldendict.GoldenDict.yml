@@ -183,7 +183,7 @@ modules:
       - type: patch
         path: add-translate-shell.patch
       - type: patch
-        path: patches/metainfo-add-releases.patch
+        path: metainfo-add-releases.patch
       - type: shell
         commands:
           # Put the version & translation config to the metadata
