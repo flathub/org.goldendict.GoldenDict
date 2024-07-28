@@ -60,8 +60,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/BYVoid/OpenCC.git
-        tag: ver.1.1.7
-        commit: e5d6c5f1b78e28a5797e7ad3ede3513314e544b7
+        tag: ver.1.1.8
+        commit: 562ff8934dc8e0994bd34f0079934715b312476c
         x-checker-data:
           type: git
           tag-pattern: ^ver.([\d.]+)$
