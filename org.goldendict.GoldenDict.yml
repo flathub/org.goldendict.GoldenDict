@@ -44,8 +44,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://downloads.sourceforge.net/mpg123/mpg123-1.32.6.tar.bz2
-            sha256: ccdd1d0abc31d73d8b435fc658c79049d0a905b30669b6a42a03ad169dc609e6
+            url: https://downloads.sourceforge.net/mpg123/mpg123-1.32.7.tar.bz2
+            sha256: 3c8919243707951cac0e3c39bbf28653bcaffc43c98ff16801a27350db8f0f21
             x-checker-data:
               type: anitya
               project-id: 12413
@@ -60,8 +60,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/BYVoid/OpenCC.git
-        tag: ver.1.1.7
-        commit: e5d6c5f1b78e28a5797e7ad3ede3513314e544b7
+        tag: ver.1.1.9
+        commit: 556ed22496d650bd0b13b6c163be9814637970ae
         x-checker-data:
           type: git
           tag-pattern: ^ver.([\d.]+)$
