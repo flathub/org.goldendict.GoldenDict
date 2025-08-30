@@ -44,8 +44,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://downloads.sourceforge.net/mpg123/mpg123-1.33.1.tar.bz2
-            sha256: 1181f65eb3c8a0a8eed8b595a811988f53c82b0916b58d3c8cc9c3ced66f0312
+            url: https://downloads.sourceforge.net/mpg123/mpg123-1.33.2.tar.bz2
+            sha256: 2c54fabbfa696dce8f9b137c8ef7a429a061f8fe633cd7d0a511809855f2c219
             x-checker-data:
               type: anitya
               project-id: 12413
@@ -178,7 +178,7 @@ modules:
         url: https://github.com/goldendict/goldendict
         # The upstream doesn't provide a stable branch
         branch: master
-        commit: 115ec97a79eb49681d5a107af819d555ebd85a19
+        commit: b380efc8ec62211fa776a6669f511247d4707948
       # Add translate-shell to enable Google Translate by default
       - type: patch
         path: add-translate-shell.patch
